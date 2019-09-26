@@ -8,6 +8,11 @@ class HomeController extends Controller {
     const data = await this.service.home.recommend(ctx.query.offset, ctx.query.limit);
     ctx.body = data;
   }
+  async comment() {
+    const { ctx } = this;
+    const data = await this.service.home.comment(ctx.params.answerId, ctx.query.offset, ctx.query.limit);
+    ctx.body = data;
+  }
 }
 
 module.exports = HomeController;

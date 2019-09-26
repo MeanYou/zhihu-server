@@ -17,6 +17,7 @@
             "restart": true,
             "port": 9999,
             "autoAttachChildProcesses": true,
+            "timeout": 100000
         }
     ]
 }

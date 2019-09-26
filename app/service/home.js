@@ -10,6 +10,13 @@ class HomeService extends Service {
     });
     return res.data;
   }
+  async comment(answerId, offset, limit) {
+    const { ctx } = this;
+    const res = await ctx.curl(`https://www.zhihu.com/api/v4/answers/${answerId}/root_comments?order=normal&limit=${limit}&offset=${offset}&status=open`, {
+      dataType: 'json',
+    });
+    return res.data;
+  }
 }
 
 module.exports = HomeService;
